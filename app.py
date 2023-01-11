@@ -1,7 +1,8 @@
 from rest_api import create_app, db
+from db_config.config import Config
 
 
-app = create_app()
+app = create_app(Config)
 
 
 @app.shell_context_processor
