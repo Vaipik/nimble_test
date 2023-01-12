@@ -237,6 +237,18 @@ pymysql = ["pymysql", "pymysql (<1)"]
 sqlcipher = ["sqlcipher3_binary"]
 
 [[package]]
+name = "swagger-ui-py"
+version = "22.7.13"
+description = "Swagger UI for Python web framework, such as Tornado, Flask, Quart, Sanic and Falcon."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+jinja2 = ">=2.0"
+PyYaml = ">=5.0"
+
+[[package]]
 name = "uuid"
 version = "1.30"
 description = "UUID object and generation functions (Python 2.3 or higher)"
@@ -261,7 +273,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "140aa1bcabf7d54417e0f12528d579e4534c31e2dc134ffcb282ae47a5c2c1c7"
+content-hash = "3ba1f20c039517a045b72278a47432bf5e4455066c497b3c2903e8b5e4724e16"
 
 [metadata.files]
 alembic = [
@@ -523,6 +535,10 @@ sqlalchemy = [
     {file = "SQLAlchemy-1.4.46-cp39-cp39-win32.whl", hash = "sha256:51e1ba2884c6a2b8e19109dc08c71c49530006c1084156ecadfaadf5f9b8b053"},
     {file = "SQLAlchemy-1.4.46-cp39-cp39-win_amd64.whl", hash = "sha256:315676344e3558f1f80d02535f410e80ea4e8fddba31ec78fe390eff5fb8f466"},
     {file = "SQLAlchemy-1.4.46.tar.gz", hash = "sha256:6913b8247d8a292ef8315162a51931e2b40ce91681f1b6f18f697045200c4a30"},
+]
+swagger-ui-py = [
+    {file = "swagger-ui-py-22.7.13.tar.gz", hash = "sha256:02df5206a6b3ea5cc1b29c0ea4010e4427118e529fbe8a22f442ba24bec496bc"},
+    {file = "swagger_ui_py-22.7.13-py3-none-any.whl", hash = "sha256:0214dd8da6fdf43a1c4425dec453789b431b6c68cb9673496c8bc9721b4ba493"},
 ]
 uuid = [
     {file = "uuid-1.30.tar.gz", hash = "sha256:1f87cc004ac5120466f36c5beae48b4c48cc411968eed0eaecd3da82aa96193f"},

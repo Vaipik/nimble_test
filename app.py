@@ -2,10 +2,10 @@ from rest_api import create_app, db
 from db_config.config import Config
 
 
-app = create_app(Config)
+app_api = create_app(Config)
 
 
-@app.shell_context_processor
+@app_api.shell_context_processor
 def make_shell_context():
     return {
         "db": db,
@@ -13,4 +13,4 @@ def make_shell_context():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app_api.run(debug=True)
