@@ -1,12 +1,53 @@
 openapi: 3.0.0
 
 info:
-  title: Swagger test
-  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
-  version: 0.1.9
+  title: Nimble test api
+  description: Accepts data in JSON decoding it in binary format and store in postgres database.
+  version: 0.0.1
+tags:
+  - name: bin data
 paths:
+  /api/bin/:
+    get:
+      tags:
+        - bin data
+      summary: Returns all stored data
+      description: Returns
+      responses:
+        '200':
+          description: A JSON array of stored data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uuids:
+                    type: array
+                    items:
+                      properties:
+                        uuid:
+                          type: string
+                        value:
+                          type: string
+                        timestamp:
+                          type: string
+                      example:
+                        - uuid: bba53464-a643-4872-add2-a10a336bbc92
+                          value: some value decoded from binary format
+                          timestamp: 1673425999.603392
+                        - uuid: a768169a-3191-4040-98db-b300160c0947
+                          value: decoded value
+                          timestamp: 1673421088.902057
+                        - uuid: c50d1c8c-c3b7-4f01-9cb2-48db137e963a
+                          value: value
+                          timestamp: 1673423215.123504
+                  status:
+                    type: string
+                    example: 200
   /api/bin/{uuid}:
     get:
+      tags:
+        - bin data
       summary: Returns decoded data by uuid key.
       description: Optional extended description in CommonMark or HTML.
       parameters:
@@ -63,6 +104,8 @@ paths:
                     example: 404
 
     put:
+      tags:
+        - bin data
       summary: Accepts data and store it in binary format
       description: Optional extended description in CommonMark or HTML.
       parameters:

@@ -37,7 +37,15 @@ def test_api_bin_put_400_wrong_uuid(client):
         assert response.status_code == 400
 
 
-def test_api_bin_get_200(client):
+def test_api_bin_get_200_single(client):
+
+    for uuid in uuids:
+        new_record_json = {"value": uuid}
+        response = client.get(f"{url}/{uuid}", json=new_record_json)
+        assert response.status_code == 200
+
+
+def test_api_bin_get_200_all(client):
 
     for uuid in uuids:
         new_record_json = {"value": uuid}

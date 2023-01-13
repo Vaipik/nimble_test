@@ -13,11 +13,12 @@ class DataByUUID(Resource):
         :return: json object with entity data or 404 if entity does not exist or 400 if wront uuid format
         """
 
-        if uuid is None:
+        if uuid is None:  # for /api/bin
             response = self.__get_all_instances()
             return {
-
-            }
+                "uuids": response,
+                "status": "200",
+            }, 200
         instance = self.__get_existing_instance(uuid)
 
         if instance is None:
@@ -91,7 +92,7 @@ class DataByUUID(Resource):
         instances = models.BinaryData.query.all()
         return [
             {
-                "uuid": instance.id,
+                "uuid": str(instance.id),
                 "value": instance.value.decode("utf-8"),
                 "timestamp": f"{instance.timestamp.timestamp()}"
             } for instance in instances
