@@ -49,7 +49,7 @@ def test_api_bin_get_200_all(client):
 
     for uuid in uuids:
         new_record_json = {"value": uuid}
-        response = client.get(f"{url}/{uuid}", json=new_record_json)
+        response = client.get(f"{url}", json=new_record_json)
         assert response.status_code == 200
 
 

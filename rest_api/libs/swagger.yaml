@@ -7,7 +7,7 @@ info:
 tags:
   - name: bin data
 paths:
-  /api/bin/:
+  /api/bin:
     get:
       tags:
         - bin data
